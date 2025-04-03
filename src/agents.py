@@ -23,6 +23,7 @@ def get_llm(force_new: bool = False):
     if llm is None or force_new:
         
         load_dotenv()
+        
         GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
         if GOOGLE_API_KEY is None:
             raise ValueError("GOOGLE_API_KEY is not set in environment variables.")
@@ -31,7 +32,11 @@ def get_llm(force_new: bool = False):
         llm = init_chat_model(
             model="gemini-2.0-flash", 
             model_provider="google_genai", 
-            GOOGLE_API_KEY=GOOGLE_API_KEY
+            GOOGLE_API_KEY=GOOGLE_API_KEY,
+            temperature=0.7,
+            top_p=0.95,
+            max_tokens=1000,
+            streaming=False
         )
     return llm
 
