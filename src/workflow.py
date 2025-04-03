@@ -38,20 +38,22 @@ def get_app(MAX_ITERATIONS: int = MAX_ITERATIONS) -> StateGraph:
 
     return app
 
-with open("test.txt", 'r') as f:
-        requirement = f.read()
-    
-initial_state: State = {
-    "requirement": requirement,
-    "test_cases": [],
-    "execution_results": [],
-    "errors": [],
-    "iteration": 0
-} 
+if __name__ == "__main__":
 
-app = get_app()
+    with open("test.txt", 'r') as f:
+            requirement = f.read()
+        
+    initial_state: State = {
+        "requirement": requirement,
+        "test_cases": [],
+        "execution_results": [],
+        "errors": [],
+        "iteration": 0
+    } 
 
-result = app.invoke(initial_state)
-print("Final Code:", result["code"])
-print("Execution Results:", result["execution_results"])
-print("Errors:", result["errors"])
+    app = get_app()
+
+    result = app.invoke(initial_state)
+    print("Final Code:", result["code"])
+    print("Execution Results:", result["execution_results"])
+    print("Errors:", result["errors"])
