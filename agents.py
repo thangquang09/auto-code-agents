@@ -266,7 +266,7 @@ def debugger(state: State) -> State:
 
 if __name__ == "__main__":
     
-    with open("project7/test.txt", 'r') as f:
+    with open("test.txt", 'r') as f:
         requirement = f.read()
 
     initial_state: State = {

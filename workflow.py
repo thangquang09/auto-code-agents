@@ -38,7 +38,7 @@ def get_app(MAX_ITERATIONS: int = MAX_ITERATIONS) -> StateGraph:
 
     return app
 
-with open("project7/test.txt", 'r') as f:
+with open("test.txt", 'r') as f:
         requirement = f.read()
     
 initial_state: State = {
