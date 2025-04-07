@@ -1,6 +1,13 @@
+
 # Auto Code Agents
 
+## Introduction
+
 Auto Code Agents is a workflow-based application that generates code based on user requirements, tests it, and iteratively improves it through debugging. The application leverages LLMs (Large Language Models) to automate the process of programming, testing, and debugging.
+
+**Architecture**
+
+![Project Architecture](architecture.png)
 
 ## Features
 - Generate code based on user requirements.
@@ -60,7 +67,7 @@ GOOGLE_API_KEY=your_google_api_key_here
 
 2. **Run the Docker Container**:
    ```bash
-   docker run --env-file .env -d --name auto_code_agents_container -p 9090:8501 auto_code_agents:v1.0
+   docker run --env-file .env -d --name auto_code_agents_container -p 9090:8501 auto_code_agents:latest
    ```
 
 3. **Access the Application**:
